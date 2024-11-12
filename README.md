@@ -19,7 +19,9 @@ docker-compose version
 4. `git clone https://github.com/dittofeed/dittofeed.git/`
 5. `cd dittofeed`
 6. Create env: `touch .env`, and edit it using the [reference](https://docs.dittofeed.com/deployment/self-hosted/docker-compose).
-7. Setup docker groups and setup auto run on boot
+7. Setup Kafka env using [reference](https://docs.dittofeed.com/deployment/self-hosted/write-modes/kafka)
+8. Configure clickhouse auth using Step 2 - [reference](https://clickhouse.com/docs/en/integrations/kafka/kafka-table-engine)
+9. Setup docker groups and setup auto run on boot
 ```sh
 sudo groupadd docker
 sudo usermod -aG docker $USER
@@ -29,5 +31,5 @@ sudo systemctl enable docker
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 ```
-8. Start the server using `docker-compose up -f docker-compose.lite.yaml -d`
-9. To stop the server use `docker-compose down -f docker-compose.lite.yaml`
+10. Start the server using `docker-compose up -f docker-compose.lite.yaml -d`
+11. To stop the server use `docker-compose down -f docker-compose.lite.yaml`
